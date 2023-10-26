@@ -33,5 +33,9 @@ class DAO:
             tarefas = arquivo.readlines()
     
         tarefas = [tarefa.split("\t",) for tarefa in tarefas]
-
+        
         return tarefas
+
+
+
+            

@@ -7,3 +7,8 @@ STATUS 	 ID 	 TAREFA
 STATUS	ID	TAREFA
 
  A 		 5052 		 comer
+STATUS	ID	TAREFA
+
+ A 		 6271 		 ddd
+ A 		 1670 		 aaaa
+ A 		 7785 		 eeew

@@ -16,7 +16,6 @@ class ToDo():
         else:
             return None
 
-
     def ListarTarefas(self):
         return dao.Listar_tarefas()
 

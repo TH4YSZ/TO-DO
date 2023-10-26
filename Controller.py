@@ -15,7 +15,7 @@ class ControllerAdicionarTarefa():
         except Exception as erro:
             print("Erro:", erro._class.name_)
         
-
+    
 
 class ControllerExcluirTarefa():
     def __init__(self, excluir):
@@ -74,5 +74,10 @@ class ControllerConcluirTarefa():
 
         TODO.concluir_tarefa(self.indice)
         
-class ControllerListarTarefaC():
-    pass
+# class Listar_tarefasC():
+#     def __init__(self):
+#         if self.tarefas == tarefa_concluida:
+#             print(f"A tarefa: {self.tarefa} foi Concluída")
+        
+            
+#         tarefas = [tarefa.split("\t",) for tarefa in tarefas ]
