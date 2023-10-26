@@ -10,8 +10,6 @@ class DAO:
         self.C = "C"
         self.E = "E"
 
-    
-
     def adicionar_tarefa(self, tarefa):
         with open(self.arquivo, 'a') as Arquivo:
             if not self.titulos_adicionados:
