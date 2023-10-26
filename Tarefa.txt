@@ -14,3 +14,7 @@ STATUS 	 ID 	 TAREFA
 STATUS 	 ID 	 TAREFA
 
  A 		 8339 	 qwsdfg
+STATUS	ID	TAREFA
+
+ A 		 9573 	 swderfgtyh
+ A 		 9548 	 dfg

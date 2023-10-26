@@ -49,4 +49,4 @@ class ControllerListarTarefa():
                 print(tarefa)
             cont += 1
 
-            print(tarefa)
+            
