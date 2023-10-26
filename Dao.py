@@ -24,7 +24,7 @@ class DAO:
                     True
                     break
 
-            Arquivo.write(f"{self.A} \t\t {self.id} \t {tarefa}\n")
+            Arquivo.write(f"\n{self.A} \t\t {self.id} \t {tarefa}\n")
     
         self.ids_salvos.append(self.id)
     

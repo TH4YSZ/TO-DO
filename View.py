@@ -26,6 +26,7 @@ while sair == False:
         case "3":
             os.system("cls")
             print("--- ALTERAR TAREFA ---\n")
+            listarTarefa = ControllerListarTarefa()
             alt = input("Digite o ID da tarefa que deseja alterar: ")
             print("")
             os.system("pause")
@@ -34,6 +35,7 @@ while sair == False:
         case "4":
             os.system("cls")
             print("--- CONCLUIR TAREFA ---\n")
+            listarTarefa = ControllerListarTarefa()
             clr = input("Digite o ID da tarefa que deseja concluir: ")
             print("")
             os.system("pause")
@@ -54,8 +56,10 @@ while sair == False:
             excluirTarefa = ControllerExcluirTarefa(excluir)
             os.system("pause")
             os.system("cls")
+
         case "7":
             sair = True
+            
         case _:
             print("\nOpção inválida.")
             os.system("pause")
