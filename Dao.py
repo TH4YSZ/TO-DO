@@ -15,7 +15,7 @@ class DAO:
     def adicionar_tarefa(self, tarefa):
         with open(self.arquivo, 'a') as Arquivo:
             if not self.titulos_adicionados:
-                Arquivo.write("----------------\nSTATUS \t ID \t TAREFA\n\n")
+                Arquivo.write("STATUS \t ID \t TAREFA\n\n")
                 self.titulos_adicionados = True
 
             while True:
@@ -24,7 +24,7 @@ class DAO:
                     True
                     break
 
-            Arquivo.write(f"\n{self.A} \t\t {self.id} \t {tarefa}\n")
+            Arquivo.write(f" {self.A} \t\t {self.id} \t {tarefa}\n")
     
         self.ids_salvos.append(self.id)
     
@@ -32,6 +32,6 @@ class DAO:
         with open('tarefa.txt', 'r') as arquivo:
             tarefas = arquivo.readlines()
     
-        tarefas = [tarefa.strip() for tarefa in tarefas]
+        tarefas = [tarefa.split("\t",) for tarefa in tarefas]
 
         return tarefas

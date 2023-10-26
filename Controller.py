@@ -41,7 +41,12 @@ class ControllerListarTarefa():
     def __init__(self):
         tarefas = TODO.ListarTarefas()
         cont = 1
-
+        
         for tarefa in tarefas:
-            print(f"{cont} -- {tarefa.strip()}")
+            if tarefa == "":
+                pass
+            else:
+                print(tarefa)
             cont += 1
+
+            print(tarefa)
