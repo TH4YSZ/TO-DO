@@ -16,6 +16,7 @@ class ControllerAdicionarTarefa():
                     print("Algum problema foi encontrado ao tentar adicionar a tarefa.")
         except Exception as erro:
             print("Erro:", erro._class.name_)
+        
 
 
 class ControllerExcluirTarefa():

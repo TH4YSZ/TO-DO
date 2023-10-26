@@ -14,6 +14,7 @@ while sair == False:
             tarefa = input("Adicione uma tarefa: ")
             addTarefa = ControllerAdicionarTarefa(tarefa)
             os.system("pause")
+            
         case "2":
             os.system("cls")
             print("--- LISTAR TAREFAS ---\n")

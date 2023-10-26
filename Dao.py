@@ -6,6 +6,9 @@ class DAO:
         self.ids_salvos = []
         self.id = random.randint(1000, 9999)
         self.titulos_adicionados = False
+        self.A = "A"
+        self.C = "C"
+        self.E = "E"
 
     def adicionar_tarefa(self, tarefa):
         with open(self.arquivo, 'a') as Arquivo:
