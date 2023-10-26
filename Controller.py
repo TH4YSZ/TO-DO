@@ -41,5 +41,5 @@ class ControllerListarTarefa():
         tarefas = TODO.ListarTarefas()
         cont = 1
         for tarefa in tarefas:
-            print(f"{cont} -- {tarefa.strip()}")  # Use .strip() to remove leading/trailing whitespace
+            print(f"{cont} -- {tarefa.strip()}")
             cont += 1

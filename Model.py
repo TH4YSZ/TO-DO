@@ -17,13 +17,8 @@ class ToDo():
             return None
 
 
-    def ListarTarefas(self): 
-        with open('tarefa.txt', 'r') as arquivo:
-            tarefas = arquivo.readlines()
-    
-        tarefas = [tarefa.strip() for tarefa in tarefas]
-
-        return tarefas
+    def ListarTarefas(self):
+        return dao.Listar_tarefas()
         
 
 TODO = ToDo()

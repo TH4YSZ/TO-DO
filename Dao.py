@@ -22,3 +22,11 @@ class DAO:
             Arquivo.write(f"{self.id} \t {tarefa}\n")
     
         self.ids_salvos.append(self.id)
+    
+    def Listar_tarefas(self): 
+        with open('tarefa.txt', 'r') as arquivo:
+            tarefas = arquivo.readlines()
+    
+        tarefas = [tarefa.strip() for tarefa in tarefas]
+
+        return tarefas
