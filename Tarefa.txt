@@ -1,20 +1,9 @@
-----------------
 STATUS 	 ID 	 TAREFA
 
-A 		 3653 	 trfdews
-A 		 1481 	 asdfghuj
-----------------
+ A 		 3721 	 ir ao mercado
 STATUS 	 ID 	 TAREFA
 
-
-A	8468	fdew
-STATUS 	 ID 	 TAREFA
-
- A 		 8689 	 4erftgyhu
-STATUS 	 ID 	 TAREFA
-
- A 		 8339 	 qwsdfg
+ A 		 7595	 gfd
 STATUS	ID	TAREFA
 
- A 		 9573 	 swderfgtyh
- A 		 9548 	 dfg
+ A 		 5052 		 comer

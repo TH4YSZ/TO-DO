@@ -37,6 +37,7 @@ while sair == False:
             print("--- CONCLUIR TAREFA ---\n")
             listarTarefa = ControllerListarTarefa()
             clr = input("Digite o ID da tarefa que deseja concluir: ")
+            concluir_tarefa = ControllerConcluirTarefa(clr)
             print("")
             os.system("pause")
             os.system("cls") 

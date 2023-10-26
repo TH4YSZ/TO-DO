@@ -19,6 +19,13 @@ class ToDo():
 
     def ListarTarefas(self):
         return dao.Listar_tarefas()
+
+    def AlterarTarefa(self, alterar):
+        pass
+
+    def concluir_tarefa(self, concluir):
+        dao.concluir_tarefa(concluir)
+        
         
 
 TODO = ToDo()
