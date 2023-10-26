@@ -39,7 +39,7 @@ while sair == False:
             os.system("pause")
             os.system("cls") 
 
-        case "7":
+        case "5":
             os.system("cls")
             print("--- LISTAR TAREFAS CONCLUÍDAS ---\n")
             print("")
