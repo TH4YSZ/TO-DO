@@ -53,19 +53,19 @@ class ControllerAlterarTarefa():
         indice = int(alterar)
         self.alterar = indice
 
-    try:
-        if self.alterar >= 0 and self.alterar < len(TODO.ListarTarefas()):
-            tarefa_alterada = TODO.AlterarTarefa(self.alterar) 
-            if tarefa_alterada:
-                print(f" VOCÊ ESTÁ ALTERANDO : {tarefa_alterada}")
-                novaTarefa = input("DIGITE A ALTERAÇÃO >>")
-                tarefa_alterada = tarefa_alterada.replace(tarefa[i], novaTarefa)
-            else:
-                print("Algum problema foi encontrado ao tentar alterar a tarefa.")
-        else:
-            print("Índice inválido. Certifique-se de que o índice indicado existe.")
-    except Exception as erro:
-        print("Erro:", type(erro).__name__)
+    # try:
+    #     if self.alterar >= 0 and self.alterar < len(TODO.ListarTarefas()):
+    #         tarefa_alterada = TODO.AlterarTarefa(self.alterar) 
+    #         if tarefa_alterada:
+    #             print(f" VOCÊ ESTÁ ALTERANDO : {tarefa_alterada}")
+    #             novaTarefa = input("DIGITE A ALTERAÇÃO >>")
+    #             tarefa_alterada = tarefa_alterada.replace(tarefa[i], novaTarefa)
+    #         else:
+    #             print("Algum problema foi encontrado ao tentar alterar a tarefa.")
+    #     else:
+    #         print("Índice inválido. Certifique-se de que o índice indicado existe.")
+    # except Exception as erro:
+    #     print("Erro:", type(erro).__name__)
         
             
 class ControllerConcluirTarefa():
@@ -74,7 +74,5 @@ class ControllerConcluirTarefa():
 
         TODO.concluir_tarefa(self.indice)
         
-        
-
 class ControllerListarTarefaC():
     pass

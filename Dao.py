@@ -28,22 +28,10 @@ class DAO:
     
         self.ids_salvos.append(self.id)
     
-    # def Listar_tarefas(self): 
-    #     with open('tarefa.txt', 'r') as arquivo:
-    #         tarefas = arquivo.readlines()
+    def Listar_tarefas(self): 
+        with open('tarefa.txt', 'r') as arquivo:
+            tarefas = arquivo.readlines()
     
-    #     tarefas = [tarefa.split("\t",) for tarefa in tarefas]
+        tarefas = [tarefa.split("\t",) for tarefa in tarefas]
 
-    #     return tarefas
-
-def Listar_tarefas(self):
-    self.tarefas = []
-    with open(self.arquivo, 'r') as arquivo:
-        linhas = arquivo.readlines()
-
-    for linha in linhas:
-        partes = linha.split('\t')
-        if len(partes) == 3:  # Certifique-se de que há três colunas
-            self.tarefas.append(partes[2].strip())  # Adicione a terceira coluna (tarefa) à lista
-
-    return self.tarefas
+        return tarefas
