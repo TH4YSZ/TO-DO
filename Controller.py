@@ -41,9 +41,10 @@ class ControllerListarTarefa():
         cont = 1
         
         for tarefa in tarefas:
-            if tarefa == "":
+            if tarefa[0] == "STATUS " or tarefa[0] == "\n" or tarefa[0] == "STATUS":
                 pass
             else:
+                # print(tarefa[3])
                 print(tarefa)
             
             cont += 1

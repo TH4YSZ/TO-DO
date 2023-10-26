@@ -12,3 +12,7 @@ STATUS	ID	TAREFA
  A 		 6271 		 ddd
  A 		 1670 		 aaaa
  A 		 7785 		 eeew
+STATUS	ID	TAREFA
+
+ A 		 2272 		 sdfghj
+ A 		 7704 		 cghndkjmndsbfew
