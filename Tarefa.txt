@@ -1,4 +1,3 @@
-
 STATUS	ID	TAREFA
-C	1404	jhgfd
-A	7276	gfegtfe
+E	1404	jhgfd
+E	7276	gfegtfe

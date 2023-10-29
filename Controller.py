@@ -19,20 +19,23 @@ class ControllerAdicionarTarefa():
 
 class ControllerExcluirTarefa():
     def __init__(self, excluir):
-        indice = int(excluir)
-        self.excluir = indice - 1 
+        self.excluir = int(excluir)
 
-        try:
-            if self.excluir >= 0 and self.excluir < len(TODO.ListarTarefas()):
-                tarefa_removida = TODO.ExcluirTarefa(self.excluir) 
-                if tarefa_removida:
-                    print(f"Tarefa Excluída: {tarefa_removida}")
-                else:
-                    print("Algum problema foi encontrado ao tentar excluir a tarefa.")
+        tarefas = dao.Listar_tarefas()
+        if 0 <= self.excluir < len(tarefas):
+            status, id, descricao = tarefas[self.excluir]
+            if status == "A" or status == "C":
+                tarefas[self.excluir] = ("E", id, descricao)
+                
+                with open(dao.arquivo, 'w') as arquivo:
+                    for s, i, t in tarefas:
+                        arquivo.write(f"{s}\t{i}\t{t}\n")
+
+                print(f"Tarefa excluída: {descricao}")
             else:
-                print("Índice inválido. Certifique-se de que o índice indicado existe.")
-        except Exception as erro:
-            print("Erro:", type(erro).__name__)
+                print("Essa tarefa já foi excluída.")
+        else:
+            print("Índice inválido. Certifique-se de que o índice indicado existe.")
 
 
 class ControllerListarTarefa():
@@ -74,7 +77,7 @@ class ControllerConcluirTarefa():
             status, id, descricao = tarefas[self.indice]
             if status == "A":
                 tarefas[self.indice] = ("C", id, descricao)
-                
+
                 with open(dao.arquivo, 'w') as arquivo:
                     for s, i, t in tarefas:
                         arquivo.write(f"{s}\t{i}\t{t}\n")

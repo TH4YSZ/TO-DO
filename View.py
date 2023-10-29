@@ -54,7 +54,7 @@ while sair == False:
             os.system("cls")
             print("--- EXCLUIR TAREFA ---\n")
             listarTarefa = ControllerListarTarefa()
-            excluir = input("\nQual o índice da tarefa que deseja excluir: ")
+            excluir = input("\nDigite o índice da tarefa que deseja excluir: ")
             excluirTarefa = ControllerExcluirTarefa(excluir)
             os.system("pause")
             os.system("cls")
