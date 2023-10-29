@@ -1,18 +1,4 @@
-STATUS 	 ID 	 TAREFA
 
- A 		 3721 	 ir ao mercado
-STATUS 	 ID 	 TAREFA
-
- A 		 7595	 gfd
 STATUS	ID	TAREFA
-
- A 		 5052 		 comer
-STATUS	ID	TAREFA
-
- A 		 6271 		 ddd
- A 		 1670 		 aaaa
- A 		 7785 		 eeew
-STATUS	ID	TAREFA
-
- A 		 2272 		 sdfghj
- A 		 7704 		 cghndkjmndsbfew
+C	1404	jhgfd
+A	7276	gfegtfe

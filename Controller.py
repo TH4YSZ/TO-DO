@@ -37,16 +37,12 @@ class ControllerExcluirTarefa():
 
 class ControllerListarTarefa():
     def __init__(self):
-        tarefas = TODO.ListarTarefas()
-        cont = 1
-        
+        tarefas = dao.Listar_tarefas()
+        cont = 0
         for tarefa in tarefas:
-            if tarefa[0] == "STATUS " or tarefa[0] == "\n" or tarefa[0] == "STATUS":
-                pass
-            else:
-                # print(tarefa[3])
-                print(tarefa)
-            
+            status, _, descricao = tarefa
+            if status == "A":
+                print(f"{cont}\t{descricao}")
             cont += 1
 
 class ControllerAlterarTarefa():
@@ -71,14 +67,30 @@ class ControllerAlterarTarefa():
             
 class ControllerConcluirTarefa():
     def __init__(self, indice):
-        self.indice = indice
+        self.indice = int(indice)
 
-        TODO.concluir_tarefa(self.indice)
+        tarefas = dao.Listar_tarefas()
+        if 0 <= self.indice < len(tarefas):
+            status, id, descricao = tarefas[self.indice]
+            if status == "A":
+                tarefas[self.indice] = ("C", id, descricao)
+                
+                with open(dao.arquivo, 'w') as arquivo:
+                    for s, i, t in tarefas:
+                        arquivo.write(f"{s}\t{i}\t{t}\n")
+
+                print(f"Tarefa Concluída: {descricao}")
+            else:
+                print("Essa tarefa já está concluída.")
+        else:
+            print("Índice inválido. Certifique-se de que o índice indicado existe.")
         
-# class Listar_tarefasC():
-#     def __init__(self):
-#         if self.tarefas == tarefa_concluida:
-#             print(f"A tarefa: {self.tarefa} foi Concluída")
-        
-            
-#         tarefas = [tarefa.split("\t",) for tarefa in tarefas ]
+class ControllerListarC():
+    def __init__(self):
+        tarefas = dao.Listar_tarefas()
+        cont = 0
+        for tarefa in tarefas:
+            status, _, descricao = tarefa
+            if status == "C":
+                print(f"{cont}\t{descricao}")
+            cont += 1

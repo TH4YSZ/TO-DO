@@ -7,8 +7,6 @@ class DAO:
         self.id = random.randint(1000, 9999)
         self.titulos_adicionados = False
         self.A = "A"
-        self.C = "C"
-        self.E = "E"
 
     def adicionar_tarefa(self, tarefa):
         with open(self.arquivo, 'a') as Arquivo:
@@ -22,17 +20,20 @@ class DAO:
                     True
                     break
 
-            Arquivo.write(f" {self.A} \t\t {self.id} \t\t {tarefa}\n")
+            Arquivo.write(f"{self.A}\t{self.id}\t{tarefa}\n")
     
         self.ids_salvos.append(self.id)
     
     def Listar_tarefas(self): 
-        with open('tarefa.txt', 'r') as arquivo:
-            tarefas = arquivo.readlines()
-    
-        tarefas = [tarefa.split("\t",) for tarefa in tarefas]
-        
-        return tarefas
+        tasks = []
+        with open(self.arquivo, 'r') as arquivo:
+            lines = arquivo.readlines()
+            for line in lines:
+                if '\t' not in line:
+                    continue
+                status, id, task = line.split('\t', 2)
+                tasks.append((status.strip(), id.strip(), task.strip()))
+        return tasks
 
 
 

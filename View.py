@@ -45,6 +45,7 @@ while sair == False:
         case "5":
             os.system("cls")
             print("--- LISTAR TAREFAS CONCLUÍDAS ---\n")
+            listarC = ControllerListarC()
             print("")
             os.system("pause")
             os.system("cls") 
