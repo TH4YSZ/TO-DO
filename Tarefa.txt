@@ -1,3 +1,5 @@
 STATUS	ID	TAREFA
-E	1404	jhgfd
-E	7276	gfegtfe
+C	2010	Ir ao mercado
+C	3294	Limpar a casa
+STATUS	ID	TAREFA
+A	1650	lwpcpw

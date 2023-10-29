@@ -25,15 +25,15 @@ class DAO:
         self.ids_salvos.append(self.id)
     
     def Listar_tarefas(self): 
-        tasks = []
+        tarefas = []
         with open(self.arquivo, 'r') as arquivo:
-            lines = arquivo.readlines()
-            for line in lines:
-                if '\t' not in line:
+            linhas = arquivo.readlines()
+            for linha in linhas:
+                if '\t' not in linha:
                     continue
-                status, id, task = line.split('\t', 2)
-                tasks.append((status.strip(), id.strip(), task.strip()))
-        return tasks
+                status, id, tarefa = linha.split('\t', 2)
+                tarefas.append((status.strip(), id.strip(), tarefa.strip()))
+        return tarefas
 
 
 

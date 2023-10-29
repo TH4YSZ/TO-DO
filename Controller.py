@@ -21,14 +21,15 @@ class ControllerExcluirTarefa():
     def __init__(self, excluir):
         self.excluir = int(excluir)
 
-        tarefas = dao.Listar_tarefas()
-        if 0 <= self.excluir < len(tarefas):
-            status, id, descricao = tarefas[self.excluir]
+        tarefass = TODO.ListarTarefas()
+
+        if 0 <= self.excluir < len(tarefass):
+            status, id, descricao = tarefass[self.excluir]
             if status == "A" or status == "C":
-                tarefas[self.excluir] = ("E", id, descricao)
+                tarefass[self.excluir] = ("E", id, descricao)
                 
                 with open(dao.arquivo, 'w') as arquivo:
-                    for s, i, t in tarefas:
+                    for s, i, t in tarefass:
                         arquivo.write(f"{s}\t{i}\t{t}\n")
 
                 print(f"Tarefa excluída: {descricao}")
@@ -40,7 +41,7 @@ class ControllerExcluirTarefa():
 
 class ControllerListarTarefa():
     def __init__(self):
-        tarefas = dao.Listar_tarefas()
+        tarefas = TODO.ListarTarefas()
         cont = 0
         for tarefa in tarefas:
             status, _, descricao = tarefa
@@ -72,7 +73,7 @@ class ControllerConcluirTarefa():
     def __init__(self, indice):
         self.indice = int(indice)
 
-        tarefas = dao.Listar_tarefas()
+        tarefas = TODO.ListarTarefas()
         if 0 <= self.indice < len(tarefas):
             status, id, descricao = tarefas[self.indice]
             if status == "A":
@@ -90,7 +91,7 @@ class ControllerConcluirTarefa():
         
 class ControllerListarC():
     def __init__(self):
-        tarefas = dao.Listar_tarefas()
+        tarefas = TODO.ListarTarefas()
         cont = 0
         for tarefa in tarefas:
             status, _, descricao = tarefa
