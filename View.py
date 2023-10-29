@@ -18,7 +18,7 @@ while sair == False:
         case "2":
             os.system("cls")
             print("--- LISTAR TAREFAS ---\n")
-            listarTarefa = ControllerListarTarefa()
+            listarTarefa = ControllerListarA()
             print("")
             os.system("pause")
             os.system("cls") 
@@ -35,7 +35,7 @@ while sair == False:
         case "4":
             os.system("cls")
             print("--- CONCLUIR TAREFA ---\n")
-            listarTarefa = ControllerListarTarefa()
+            listarTarefa = ControllerListarA()
             clr = input("Digite o ID da tarefa que deseja concluir: ")
             concluir_tarefa = ControllerConcluirTarefa(clr)
             print("")

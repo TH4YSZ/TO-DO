@@ -39,7 +39,7 @@ class ControllerExcluirTarefa():
             print("Índice inválido. Certifique-se de que o índice indicado existe.")
 
 
-class ControllerListarTarefa():
+class ControllerListarA():
     def __init__(self):
         tarefas = TODO.ListarTarefas()
         cont = 0
@@ -54,19 +54,19 @@ class ControllerAlterarTarefa():
         indice = int(alterar)
         self.alterar = indice
 
-    # try:
-    #     if self.alterar >= 0 and self.alterar < len(TODO.ListarTarefas()):
-    #         tarefa_alterada = TODO.AlterarTarefa(self.alterar) 
-    #         if tarefa_alterada:
-    #             print(f" VOCÊ ESTÁ ALTERANDO : {tarefa_alterada}")
-    #             novaTarefa = input("DIGITE A ALTERAÇÃO >>")
-    #             tarefa_alterada = tarefa_alterada.replace(tarefa[i], novaTarefa)
-    #         else:
-    #             print("Algum problema foi encontrado ao tentar alterar a tarefa.")
-    #     else:
-    #         print("Índice inválido. Certifique-se de que o índice indicado existe.")
-    # except Exception as erro:
-    #     print("Erro:", type(erro).__name__)
+    try:
+        if self.alterar >= 0 and self.alterar < len(TODO.ListarTarefas()):
+            tarefa_alterada = TODO.AlterarTarefa(self.alterar) 
+            if tarefa_alterada:
+                print(f" VOCÊ ESTÁ ALTERANDO : {tarefa_alterada}")
+                novaTarefa = input("DIGITE A ALTERAÇÃO >>")
+                tarefa_alterada = tarefa_alterada.replace(tarefa[i], novaTarefa)
+            else:
+                print("Algum problema foi encontrado ao tentar alterar a tarefa.")
+        else:
+            print("Índice inválido. Certifique-se de que o índice indicado existe.")
+    except Exception as erro:
+        print("Erro:", type(erro).__name__)
         
             
 class ControllerConcluirTarefa():
@@ -96,5 +96,15 @@ class ControllerListarC():
         for tarefa in tarefas:
             status, _, descricao = tarefa
             if status == "C":
+                print(f"{cont}\t{descricao}")
+            cont += 1
+
+class ControllerListarTarefa():
+    def __init__(self):
+        tarefas = TODO.ListarTarefas()
+        cont = 0
+        for tarefa in tarefas:
+            status, _, descricao = tarefa
+            if status == "A" or status == "C":
                 print(f"{cont}\t{descricao}")
             cont += 1
