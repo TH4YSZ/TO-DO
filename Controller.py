@@ -52,20 +52,24 @@ class ControllerListarA():
             cont += 1
 
 class ControllerAlterarTarefa():
-    def __init__(self, indice, alterar):
-        indice = int(alterar)
-        self.alterar = indice
-
-        if self.alterar == " " or self.alterar == "":
-                print("Informe um índice válido.")
-        elif self.alterar >= 0 and self.alterar < len(TODO.ListarTarefas()):
-            tarefa_alterada = TODO.AlterarTarefa(self.alterar) 
-            if tarefa_alterada:
-                print(f" VOCÊ ESTÁ ALTERANDO : {tarefa_alterada}")
-                novaTarefa = input("DIGITE A ALTERAÇÃO >>")
-                tarefa_alterada = tarefa_alterada.replace(tarefa[i], novaTarefa)
+    def __init__(self, indice, new_tarefa):
+        self.indice = int(indice)
+        self.new_tarefa = new_tarefa
+        
+        tarefas = TODO.ListarTarefas()
+        if self.indice >= 0 and self.indice < len(tarefas):
+            status, id, descricao = tarefas[self.indice]
+            
+            if status == "A":
+                tarefas[self.indice] = (status, id, new_tarefa)
+                
+                with open(dao.arquivo, 'w') as arquivo:
+                    for s, i, t in tarefas:
+                        arquivo.write(f"{s}\t{i}\t{t}\n")
+                
+                print(f"Tarefa alterada: {descricao} -> {new_tarefa}")
             else:
-                print("Algum problema foi encontrado ao tentar alterar a tarefa.")
+                print("Não é possível alterar tarefas concluídas.")
         else:
             print("Índice inválido. Certifique-se de que o índice indicado existe.")
     

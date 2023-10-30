@@ -26,8 +26,10 @@ while sair == False:
         case "3":
             os.system("cls")
             print("--- ALTERAR TAREFA ---\n")
-            listarTarefa = ControllerListarTarefa()
-            alt = input("Digite o ID da tarefa que deseja alterar: ")
+            listarTarefa = ControllerListarA()
+            indice = input("\nDigite o ID da tarefa que deseja alterar: ")
+            desc = input("Digite a nova tarefa: ")
+            alterar_tarefa = ControllerAlterarTarefa(indice, desc)
             print("")
             os.system("pause")
             os.system("cls") 

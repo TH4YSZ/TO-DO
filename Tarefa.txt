@@ -7,3 +7,5 @@ STATUS	ID	TAREFA
 C	3626	Lavar a louça
 STATUS	ID	TAREFA
 E	4349	wefdbiwbgf
+STATUS	ID	TAREFA
+A	6445	werftg
