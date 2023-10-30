@@ -57,7 +57,11 @@ class ControllerAlterarTarefa():
         self.new_tarefa = new_tarefa
         
         tarefas = TODO.ListarTarefas()
-        if self.indice >= 0 and self.indice < len(tarefas):
+        if self.indice == " " or self.indice == "":
+            print("Informe um índice válido.")
+        elif self.new_tarefa == " " or self.new_tarefa == "":
+            print("Informe uma tarefa válida.")
+        elif self.indice >= 0 and self.indice < len(tarefas):
             status, id, descricao = tarefas[self.indice]
             
             if status == "A":
