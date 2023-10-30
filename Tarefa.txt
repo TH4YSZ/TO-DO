@@ -2,4 +2,8 @@ STATUS	ID	TAREFA
 C	2010	Ir ao mercado
 C	3294	Limpar a casa
 STATUS	ID	TAREFA
-A	1650	lwpcpw
+C	1650	lwpcpw
+STATUS	ID	TAREFA
+C	3626	Lavar a louça
+STATUS	ID	TAREFA
+E	4349	wefdbiwbgf
