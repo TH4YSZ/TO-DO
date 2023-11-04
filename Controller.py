@@ -1,41 +1,59 @@
 from Model import *
+import random
 
-class ControllerAdicionarTarefa():
-    def __init__(self, tarefa):
+class ControllerAdicionarTarefa:
+    def AdicionarTarefa(self, tarefa):
         self.tarefa = tarefa
-    
+        self.A = "A"
+        id_salvos = []
+        titulo_adicionado = False  
+
         try:
-            if self.tarefa == " " or self.tarefa == "":
-                print("Informe uma tarefa válida")
-            else:
-                if TODO.AdicionarTarefa(self.tarefa) == True:
-                    print("Tarefa Adicionada!")
+            id_tarefa = random.randint(1000, 9999)
+            id_salvos.append(id_tarefa)
+
+       
+            if titulo_adicionado == False:
+                add_titulo = f"Status\tID\tTarefa\n\n"
+                if TODO.AdicionarTarefa(add_titulo) == True:
+                    titulo_adicionado = True 
+
+                if id_tarefa != id_salvos:
+                    if self.tarefa == " " or self.tarefa == "":
+                        print("Informe uma tarefa válida.")
+                    else:
+                        new_tarefa = f"{self.A}\t{id_tarefa}\t{self.tarefa}\n"
+                        if TODO.AdicionarTarefa(new_tarefa) == True:
+                            print("Tarefa adicionada!")
+                        else:
+                            print("Erro ao adicionar tarefa.")
                 else:
-                    print("Algum problema foi encontrado ao tentar adicionar a tarefa.")
+                    id_tarefa = random.randint(1000, 9999)
+            else:
+                print("Algum problema foi encontrado ao tentar adicionar a tarefa.")
+
         except Exception as erro:
             print("Erro:", erro._class.name_)
         
-    
 
-class ControllerExcluirTarefa():
+class ControllerExcluirTarefa:
     def __init__(self, excluir):
         self.excluir = int(excluir)
 
-        tarefass = TODO.ListarTarefas()
-
-
         if self.excluir == " " or self.excluir == "":
             print("Informe um índice válido.")
-        elif 0 <= self.excluir < len(tarefass):
-            status, id, descricao = tarefass[self.excluir]
-            if status == "A" or status == "C":
-                tarefass[self.excluir] = ("E", id, descricao)
-                    
-                with open(dao.arquivo, 'w') as arquivo:
-                    for s, i, t in tarefass:
-                        arquivo.write(f"{s}\t{i}\t{t}\n")
+        else:
+            lista_tarefas = TODO.ListarTarefas()
+            self.excluir_tarefa(tarefas)
 
-                print(f"Tarefa excluída: {descricao}")
+    def excluir_tarefa(self, tarefas):
+        if 0 <= self.excluir < len(lista_tarefas):
+            status, id, descricao = tarefas[self.excluir]
+            if status == "A" or status == "C":
+                if TODO.ExcluirTarefa(self.excluir):
+                    print(f"Tarefa excluída: {descricao}")
+                else:
+                    print("Erro ao excluir a tarefa.")
             else:
                 print("Essa tarefa já foi excluída.")
         else:
@@ -122,3 +140,5 @@ class ControllerListarTarefa():
             if status == "A" or status == "C":
                 print(f"{cont}\t{descricao}")
             cont += 1
+
+controlleradd = ControllerAdicionarTarefa()

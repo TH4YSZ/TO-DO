@@ -12,7 +12,7 @@ while sair == False:
             os.system("cls")
             print("-- ADICIONAR TAREFA ---\n")
             tarefa = input("Adicione uma tarefa: ")
-            addTarefa = ControllerAdicionarTarefa(tarefa)
+            controlleradd.AdicionarTarefa(tarefa)
             os.system("pause")
             
         case "2":

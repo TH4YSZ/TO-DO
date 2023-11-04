@@ -1,0 +1,9 @@
+STATUS	ID	TAREFA
+
+A	8109	ughdjjd
+Status:	ID:	Tarefa:
+A	5430	iiiii
+Status	ID	Tarefa
+Status	ID	Tarefa
+Status	ID	Tarefa
+A	8231	Ola mundo

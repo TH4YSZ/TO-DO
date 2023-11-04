@@ -1,28 +1,19 @@
-import random
+
 
 class DAO:
     def __init__(self, arquivo):
         self.arquivo = arquivo
-        self.ids_salvos = []
-        self.id = random.randint(1000, 9999)
-        self.titulos_adicionados = False
-        self.A = "A"
 
     def adicionar_tarefa(self, tarefa):
         with open(self.arquivo, 'a') as Arquivo:
-            if not self.titulos_adicionados:
-                Arquivo.write("STATUS\tID\tTAREFA\n\n")
-                self.titulos_adicionados = True
-
-            while True:
-                self.id = random.randint(1000, 9999)
-                if self.id not in self.ids_salvos:
-                    True
-                    break
-
-            Arquivo.write(f"{self.A}\t{self.id}\t{tarefa}\n")
+            Arquivo.write(tarefa)
     
-        self.ids_salvos.append(self.id)
+    def excluir_tarefa(self, excluir):
+        with open(self.arquivo, 'w') as arquivo:
+            for s, i, t in tarefas:
+                    Arquivo.write(f"{s}\t{i}\t{t}\n")
+            return True
+                    
     
     def Listar_tarefas(self): 
         tarefas = []
@@ -35,6 +26,8 @@ class DAO:
                 tarefas.append((status.strip(), id.strip(), tarefa.strip()))
         return tarefas
 
+    def AlterarTarefa():
+        pass
 
 
             
