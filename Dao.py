@@ -3,15 +3,19 @@
 class DAO:
     def __init__(self, arquivo):
         self.arquivo = arquivo
+        self.titulos_adicionados = False
 
     def adicionar_tarefa(self, tarefa):
         with open(self.arquivo, 'a') as Arquivo:
+            if not self.titulos_adicionados:
+                Arquivo.write("STATUS\tID\tTAREFA\n\n")
+                self.titulos_adicionados = True
             Arquivo.write(tarefa)
     
     def excluir_tarefa(self, excluir):
         tarefass = self.Listar_tarefas()
         status, id, descricao = tarefass[excluir]
-        tarefass[excluir] = ("C", id, descricao)
+        tarefass[excluir] = ("E", id, descricao)
                     
         with open(self.arquivo, 'w') as arquivo:
             for s, i, t in tarefass:
@@ -19,12 +23,12 @@ class DAO:
         return True
     
     def concluir_tarefa(self, concluir):
-        tarefass = self.Listar_tarefas()
-        status, id, descricao = tarefass[concluir]
-        tarefass[concluir] = ("C", id, descricao)
+        tarefas = self.Listar_tarefas()
+        status, id, descricao = tarefas[concluir]
+        tarefas[concluir] = ("C", id, descricao)
                     
         with open(self.arquivo, 'w') as arquivo:
-            for s, i, t in tarefass:
+            for s, i, t in tarefas:
                 arquivo.write(f"{s}\t{i}\t{t}\n")
         return True
     
@@ -50,8 +54,7 @@ class DAO:
                 tarefas.append((status.strip(), id.strip(), tarefa.strip()))
         return tarefas
 
-    def AlterarTarefa():
-        pass
+
 
 
             

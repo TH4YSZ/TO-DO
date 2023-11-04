@@ -18,7 +18,7 @@ while sair == False:
         case "2":
             os.system("cls")
             print("--- LISTAR TAREFAS ---\n")
-            listarTarefa = ControllerListarA()
+            listarTarefa = ControllerListarTarefa("A")
             print("")
             os.system("pause")
             os.system("cls") 
@@ -26,7 +26,7 @@ while sair == False:
         case "3":
             os.system("cls")
             print("--- ALTERAR TAREFA ---\n")
-            listarTarefa = ControllerListarA()
+            listarTarefa = ControllerListarTarefa("A")
             indice = input("\nDigite o ID da tarefa que deseja alterar: ")
             desc = input("Digite a nova tarefa: ")
             alterar_tarefa = ControllerAlterarTarefa(indice, desc)
@@ -37,7 +37,7 @@ while sair == False:
         case "4":
             os.system("cls")
             print("--- CONCLUIR TAREFA ---\n")
-            listarTarefa = ControllerListarA()
+            listarTarefa = ControllerListarTarefa("A")
 
             clr = input("Digite o ID da tarefa que deseja concluir: ")
             concluir_tarefa = ControllerConcluirTarefa(clr)
@@ -48,7 +48,7 @@ while sair == False:
         case "5":
             os.system("cls")
             print("--- LISTAR TAREFAS CONCLUÍDAS ---\n")
-            listarC = ControllerListarC()
+            listarC = ControllerListarTarefa("C")
             print("")
             os.system("pause")
             os.system("cls") 
@@ -56,7 +56,7 @@ while sair == False:
         case "6":
             os.system("cls")
             print("--- EXCLUIR TAREFA ---\n")
-            listarTarefa = ControllerListarTarefa()
+            listarTarefa = ControllerListarTarefa("A")
             excluir = input("\nDigite o índice da tarefa que deseja excluir: ")
             excluirTarefa = ControllerExcluirTarefa(excluir)
             os.system("pause")
