@@ -39,25 +39,22 @@ class ControllerAdicionarTarefa:
 class ControllerExcluirTarefa:
     def __init__(self, excluir):
         self.excluir = int(excluir)
+        tarefass = TODO.ListarTarefas()
 
         if self.excluir == " " or self.excluir == "":
             print("Informe um índice válido.")
-        else:
-            lista_tarefas = TODO.ListarTarefas()
-            self.excluir_tarefa(tarefas)
-
-    def excluir_tarefa(self, tarefas):
-        if 0 <= self.excluir < len(lista_tarefas):
-            status, id, descricao = tarefas[self.excluir]
+        elif 0 <= self.excluir < len(tarefass):
+            status, id, descricao = tarefass[self.excluir]
             if status == "A" or status == "C":
-                if TODO.ExcluirTarefa(self.excluir):
+                if TODO.ExcluirTarefa(self.excluir) == True:
                     print(f"Tarefa excluída: {descricao}")
                 else:
-                    print("Erro ao excluir a tarefa.")
+                    print("Tarefa não encontrada.")
             else:
                 print("Essa tarefa já foi excluída.")
         else:
             print("Índice inválido. Certifique-se de que o índice indicado existe.")
+
 
 class ControllerListarA():
     def __init__(self):
@@ -69,7 +66,8 @@ class ControllerListarA():
                 print(f"{cont}\t{descricao}")
             cont += 1
 
-class ControllerAlterarTarefa():
+
+class ControllerAlterarTarefa:
     def __init__(self, indice, new_tarefa):
         self.indice = int(indice)
         self.new_tarefa = new_tarefa
@@ -81,42 +79,33 @@ class ControllerAlterarTarefa():
             print("Informe uma tarefa válida.")
         elif self.indice >= 0 and self.indice < len(tarefas):
             status, id, descricao = tarefas[self.indice]
-            
             if status == "A":
-                tarefas[self.indice] = (status, id, new_tarefa)
-                
-                with open(dao.arquivo, 'w') as arquivo:
-                    for s, i, t in tarefas:
-                        arquivo.write(f"{s}\t{i}\t{t}\n")
-                
-                print(f"Tarefa alterada: {descricao} -> {new_tarefa}")
+                if TODO.AlterarTarefa(self.indice, self.new_tarefa) == True:
+                    print(f"Tarefa alterada: {descricao} -> {new_tarefa}")
+                else:
+                    print("Tarefa não encontrada.")
             else:
                 print("Não é possível alterar tarefas concluídas.")
         else:
             print("Índice inválido. Certifique-se de que o índice indicado existe.")
-    
-        
             
+
 class ControllerConcluirTarefa():
     def __init__(self, indice):
         self.indice = int(indice)
+        tarefass = TODO.ListarTarefas()
 
-        tarefas = TODO.ListarTarefas()
-     
         if self.indice == " " or self.indice == "":
             print("Informe um índice válido.")
-        elif 0 <= self.indice < len(tarefas):
-            status, id, descricao = tarefas[self.indice]
+        elif 0 <= self.indice < len(tarefass):
+            status, id, descricao = tarefass[self.indice]
             if status == "A":
-                tarefas[self.indice] = ("C", id, descricao)
-
-                with open(dao.arquivo, 'w') as arquivo:
-                    for s, i, t in tarefas:
-                        arquivo.write(f"{s}\t{i}\t{t}\n")
-
-                print(f"Tarefa Concluída: {descricao}")
+                if TODO.ExcluirTarefa(self.indice) == True:
+                    print(f"Tarefa concluída: {descricao}")
+                else:
+                    print("Tarefa não encontrada.")
             else:
-                print("Essa tarefa já está concluída.")
+                print("Essa tarefa já foi concluída.")
         else:
             print("Índice inválido. Certifique-se de que o índice indicado existe.")
         

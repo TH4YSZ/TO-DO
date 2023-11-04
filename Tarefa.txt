@@ -1,9 +1,10 @@
-STATUS	ID	TAREFA
-
-A	8109	ughdjjd
-Status:	ID:	Tarefa:
-A	5430	iiiii
 Status	ID	Tarefa
+E	3418	Ir ao mercado
 Status	ID	Tarefa
+C	6805	Ir ao mercado
 Status	ID	Tarefa
-A	8231	Ola mundo
+A	2134	Jogar
+Status	ID	Tarefa
+E	3056	iiiiiiiiiiiii
+Status	ID	Tarefa
+A	1467	oooooo

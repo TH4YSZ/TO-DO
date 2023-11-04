@@ -9,10 +9,34 @@ class DAO:
             Arquivo.write(tarefa)
     
     def excluir_tarefa(self, excluir):
+        tarefass = self.Listar_tarefas()
+        status, id, descricao = tarefass[excluir]
+        tarefass[excluir] = ("C", id, descricao)
+                    
         with open(self.arquivo, 'w') as arquivo:
-            for s, i, t in tarefas:
-                    Arquivo.write(f"{s}\t{i}\t{t}\n")
-            return True
+            for s, i, t in tarefass:
+                arquivo.write(f"{s}\t{i}\t{t}\n")
+        return True
+    
+    def concluir_tarefa(self, concluir):
+        tarefass = self.Listar_tarefas()
+        status, id, descricao = tarefass[concluir]
+        tarefass[concluir] = ("C", id, descricao)
+                    
+        with open(self.arquivo, 'w') as arquivo:
+            for s, i, t in tarefass:
+                arquivo.write(f"{s}\t{i}\t{t}\n")
+        return True
+    
+    def Alterar_Tarefa(self, indice, new_tarefa):
+        tarefass = self.Listar_tarefas()
+        status, id, descricao = tarefass[indice]
+        tarefass[indice] = (status, id, new_tarefa)
+
+        with open(self.arquivo, 'w') as arquivo:
+            for s, i, t in tarefass:
+                arquivo.write(f"{s}\t{i}\t{t}\n")
+        return True
                     
     
     def Listar_tarefas(self): 
