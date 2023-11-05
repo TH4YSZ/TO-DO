@@ -17,7 +17,7 @@ class ToDo():
     def AlterarTarefa(self, indice, new_tarefa):
         return dao.Alterar_Tarefa(indice, new_tarefa)
 
-    def concluir_tarefa(self, concluir):
+    def ConcluirTarefa(self, concluir):
         return dao.concluir_tarefa(concluir)
     
         

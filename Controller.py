@@ -88,7 +88,7 @@ class ControllerConcluirTarefa():
             elif 0 <= self.indice < len(tarefass):
                 status, id, descricao = tarefass[self.indice]
                 if status == "A":
-                    if TODO.concluir_tarefa(self.indice) == True:
+                    if TODO.ConcluirTarefa(self.indice) == True:
                         print(f"Tarefa concluída: {descricao}")
                     else:
                         print("Tarefa não encontrada.")
